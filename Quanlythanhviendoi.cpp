@@ -64,6 +64,7 @@ main()
 {
     thanh_vien sv[100];
 	int i,j,sl,ma,k,them,f,x,m;
+	char tl;
 	printf(" Nhap so luong thanh vien: \t ");
 	scanf("%d",&sl);
 	for(i=0;i<sl;i++)
@@ -74,9 +75,11 @@ main()
 	{
 		In(&sv[j]);
 	};
+	while ((tl='c')||(tl='C'))
+	{
 	printf("\n Ban can thao tac gi?? \n 1. Them \n 2. Tim \n 3. Xoa \n 4. Sua \n ");
 	scanf("%d",&m);
-	switch (m*1)
+	switch (m)
 	{
 		case 1: {	printf("\n Nhap so thanh vien can them:\t ");
 					scanf("%d",&them);
@@ -116,7 +119,12 @@ main()
 					};
 				}break;
 	}
-	printf(" Cam on ban da tuong tac voi chung toi !!! ");
+	printf ("\n Ban co muon tiep tuc khong?? \t");
+	fflush(stdin);
+	scanf("%s",&tl);
+	}
+	
+	printf("\n Cam on ban da tuong tac voi chung toi !!! ");
 }
 
 
