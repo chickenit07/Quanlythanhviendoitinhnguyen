@@ -63,7 +63,7 @@ void Sua(thanh_vien *tv,int x)
 main()
 {
     thanh_vien sv[100];
-	int i,j,sl,ma,k,them,f,x;
+	int i,j,sl,ma,k,them,f,x,m;
 	printf(" Nhap so luong thanh vien: \t ");
 	scanf("%d",&sl);
 	for(i=0;i<sl;i++)
@@ -74,44 +74,51 @@ main()
 	{
 		In(&sv[j]);
 	};
-	printf("\n Nhap so thanh vien can them:\t ");
-	scanf("%d",&them);
-	Them(&sv[0],them,&sl);
-	for(k=0;k<sl;k++)
+	printf("\n Ban can thao tac gi?? \n 1. Them \n 2. Tim \n 3. Xoa \n 4. Sua \n ");
+	scanf("%d",&m);
+	switch (m*1)
 	{
-		In (&sv[k]);
+		case 1: {	printf("\n Nhap so thanh vien can them:\t ");
+					scanf("%d",&them);
+					Them(&sv[0],them,&sl);
+					for(k=0;k<sl;k++)
+					{
+						In (&sv[k]);
+		
+					}
+				}break;
+		case 2: {	printf("\n Nhap ma ID can tim:\t ");
+					scanf("%d",&ma);
+					f= Tim(&sv[0],ma);
+					In(&sv[f]);
+				} break;
+		case 3: {
+					printf("\n Nhap ID nguoi can xoa:\t  ");
+					scanf ("%d",&ma);
+					fflush(stdin);
+					x=Tim(&sv[0],ma);
+					Xoa(&sv[0],x,&sl);
+					for(k=0;k<sl;k++)
+					{
+						In (&sv[k]);
 	
+					};
+	        	}break;
+	    case 4: {
+	    			printf("\n Nhap ID nguoi can xoa:\t  ");
+					scanf ("%d",&ma);
+					fflush(stdin);
+					x=Tim(&sv[0],ma);
+					Xoa(&sv[0],x,&sl);
+					for(k=0;k<sl;k++)
+					{
+						In (&sv[k]);
+					};
+				}break;
 	}
-	printf("\n Nhap ma ID can tim:\t ");
-	scanf("%d",&ma);
-	f= Tim(&sv[0],ma);
-	In(&sv[f]);
-	printf("\n Nhap ID nguoi can xoa:\t  ");
-	scanf ("%d",&ma);
-	fflush(stdin);
-	x=Tim(&sv[0],ma);
-	Xoa(&sv[0],x,&sl);
-	for(k=0;k<sl;k++)
-	{
-		In (&sv[k]);
-	
-	};
-	printf ("\n Nhap ID nguoi can sua:\t ");
-	scanf("%d",&ma);
-	x=Tim(&sv[0],ma);
-	Sua(&sv[0],x);
-	for(k=0;k<sl;k++)
-	{
-		In (&sv[k]);
-	
-	};
+	printf(" Cam on ban da tuong tac voi chung toi !!! ");
 }
 
-
-	
-
-
-	
 
 	
 
