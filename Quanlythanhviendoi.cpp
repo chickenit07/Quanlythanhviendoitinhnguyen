@@ -35,10 +35,20 @@ void Them (thanh_vien *tv,int them,int *sl)
 		Nhap (&tv[i]);
 	*sl=*sl+them;
 }
+int Tim (thanh_vien *tv, int ma)
+{
+	int dem=0;
+	while(tv->ID != ma)
+	{
+		tv=tv+1;
+		dem++;
+	}
+	return dem;
+}
 main()
 {
     thanh_vien sv[100];
-	int i,j,sl,ma,k,them;
+	int i,j,sl,ma,k,them,f;
 	printf(" Nhap so luong thanh vien: \t ");
 	scanf("%d",&sl);
 	for(i=0;i<sl;i++)
@@ -55,9 +65,20 @@ main()
 	for(k=0;k<sl;k++)
 	{
 		In (&sv[k]);
+	
 	}
+	printf("\n Nhap ma ID can tim:\t ");
+	scanf("%d",&ma);
+	f= Tim(&sv[0],ma);
+	In(&sv[f]);
+	
 }
 
+
+	
+
+
+	
 
 	
 
