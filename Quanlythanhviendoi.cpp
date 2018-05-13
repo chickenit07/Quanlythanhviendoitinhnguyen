@@ -75,7 +75,7 @@ main()
 	{
 		In(&sv[j]);
 	};
-	while ((tl='c')||(tl='C'))
+	while ((tl='c')&&(tl='C'))
 	{
 	printf("\n Ban can thao tac gi?? \n 1. Them \n 2. Tim \n 3. Xoa \n 4. Sua \n ");
 	scanf("%d",&m);
@@ -108,15 +108,14 @@ main()
 					};
 	        	}break;
 	    case 4: {
-	    			printf("\n Nhap ID nguoi can xoa:\t  ");
-					scanf ("%d",&ma);
-					fflush(stdin);
-					x=Tim(&sv[0],ma);
-					Xoa(&sv[0],x,&sl);
-					for(k=0;k<sl;k++)
-					{
-						In (&sv[k]);
-					};
+	    				printf ("\n Nhap ID nguoi can sua:\t ");
+						scanf("%d",&ma);
+						x=Tim(&sv[0],ma);
+						Sua(&sv[0],x);
+						for(k=0;k<sl;k++)
+						{
+							In (&sv[k]);
+						};
 				}break;
 	}
 	printf ("\n Ban co muon tiep tuc khong?? \t");
