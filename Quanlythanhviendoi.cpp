@@ -45,10 +45,25 @@ int Tim (thanh_vien *tv, int ma)
 	}
 	return dem;
 }
+void Xoa(thanh_vien *tv,int x,int *sl)
+{
+	int i;
+	for (i=x;i<(*sl-1);i++)
+	{
+		tv[i]=tv[i+1];
+	}
+	*sl=*sl-1;
+}
+void Sua(thanh_vien *tv,int x)
+{
+	tv=tv+x;
+	Nhap(&tv[x]);
+
+}
 main()
 {
     thanh_vien sv[100];
-	int i,j,sl,ma,k,them,f;
+	int i,j,sl,ma,k,them,f,x;
 	printf(" Nhap so luong thanh vien: \t ");
 	scanf("%d",&sl);
 	for(i=0;i<sl;i++)
@@ -71,7 +86,25 @@ main()
 	scanf("%d",&ma);
 	f= Tim(&sv[0],ma);
 	In(&sv[f]);
+	printf("\n Nhap ID nguoi can xoa:\t  ");
+	scanf ("%d",&ma);
+	fflush(stdin);
+	x=Tim(&sv[0],ma);
+	Xoa(&sv[0],x,&sl);
+	for(k=0;k<sl;k++)
+	{
+		In (&sv[k]);
 	
+	};
+	printf ("\n Nhap ID nguoi can sua:\t ");
+	scanf("%d",&ma);
+	x=Tim(&sv[0],ma);
+	Sua(&sv[0],x);
+	for(k=0;k<sl;k++)
+	{
+		In (&sv[k]);
+	
+	};
 }
 
 
