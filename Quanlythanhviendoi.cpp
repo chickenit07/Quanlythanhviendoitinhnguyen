@@ -118,7 +118,7 @@ main()
 						};
 				}break;
 	}
-	printf ("\n Ban co muon tiep tuc khong?? \t");
+	printf ("\n Ban co muon tiep tuc khong??(C/K) \t");
 	fflush(stdin);
 	scanf("%s",&tl);
 	}
