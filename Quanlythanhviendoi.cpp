@@ -75,7 +75,7 @@ main()
 	{
 		In(&sv[j]);
 	};
-	while ((tl='c')&&(tl='C'))
+	while ((tl!='k')&&(tl!='K'))
 	{
 	printf("\n Ban can thao tac gi?? \n 1. Them \n 2. Tim \n 3. Xoa \n 4. Sua \n ");
 	scanf("%d",&m);
